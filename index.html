@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Carte de visite – Richard Manceau</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Colore les barres du haut / bas de Safari -->
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0a0f1b">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0f1b">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #1f2638 0, #050611 50%, #020308 100%);
+      color: #f5f5f5;
+    }
+
+    .card-wrapper {
+      padding: 20px;
+    }
+
+    .card {
+      width: 360px;
+      max-width: 92vw;
+      border-radius: 28px;
+      padding: 26px 20px 22px;
+
+      border: 2px solid rgba(255, 255, 255, 0.75);
+      box-shadow:
+        0 0 12px rgba(255, 255, 255, 0.65),
+        0 0 22px rgba(255, 255, 255, 0.45),
+        0 0 42px rgba(255, 255, 255, 0.25),
+        0 0 65px rgba(0, 0, 0, 0.7),
+        0 25px 60px rgba(0, 0, 0, 0.9);
+
+      background: linear-gradient(155deg, #0a0f1b 0%, #121929 40%, #0b0f18 100%);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .logo-box {
+      align-self: center;
+      width: 150px;
+      height: 150px;
+      border-radius: 22px;
+      background: #151922;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.8);
+      padding: 10px;
+    }
+
+    .logo-box img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      border-radius: 18px;
+    }
+
+    .identity {
+      text-align: center;
+      line-height: 1.35;
+    }
+
+    .identity .company {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8d2e6;
+      margin-bottom: 4px;
+    }
+
+    .identity .name {
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .identity .role {
+      font-size: 0.95rem;
+      color: #b4bfd8;
+      margin-top: 2px;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+
+    .action-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      min-width: 105px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      color: #f7f7f7;
+      font-size: 0.86rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.55);
+      background: #2a3040;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease, background 0.2s ease;
+    }
+
+    .action-btn span.icon {
+      font-size: 1.1rem;
+    }
+
+    .action-btn.phone {
+      background: linear-gradient(135deg, #8f252b, #64161a);
+    }
+
+    .action-btn.mail {
+      background: linear-gradient(135deg, #35548a, #23345b);
+    }
+
+    .action-btn.site {
+      background: linear-gradient(135deg, #3b404c, #262a34);
+    }
+
+    .action-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.7);
+      filter: brightness(1.03);
+    }
+
+    .action-btn:active {
+      transform: translateY(1px) scale(0.98);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+      filter: brightness(0.97);
+    }
+
+    .section-title {
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #9aa6c8;
+      margin-bottom: 6px;
+      margin-top: 4px;
+    }
+
+    .map-wrapper {
+      margin-top: 2px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.8);
+    }
+
+    .map-wrapper iframe {
+      width: 100%;
+      height: 210px;
+      border: 0;
+    }
+
+    .footer-text {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.75rem;
+      color: #8f9abc;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card-wrapper">
+    <div class="card">
+
+      <!-- Logo -->
+      <div class="logo-box">
+        <img src="IMG_7657.jpg" alt="Ludovic Robert - Logo" />
+      </div>
+
+      <!-- Identité -->
+      <div class="identity">
+        <div class="company">Société LUDOVIC ROBERT</div>
+        <div class="name">Richard Manceau</div>
+        <div class="role">Directeur d’agence</div>
+      </div>
+
+      <!-- Boutons -->
+      <div class="actions">
+        <a class="action-btn phone" href="tel:0688088906">
+          <span class="icon">📞</span>
+          <span>Appeler</span>
+        </a>
+
+        <a class="action-btn mail" href="mailto:rmanceau@robert-platrerie.fr">
+          <span class="icon">✉️</span>
+          <span>E-mail</span>
+        </a>
+
+        <a class="action-btn site" href="https://www.robert-platrerie-lemans.fr" target="_blank">
+          <span class="icon">🌐</span>
+          <span>Site web</span>
+        </a>
+
+        <!-- Ajouter contact -->
+        <a
+          class="action-btn site"
+          href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3ARichard%20Manceau%0AN%3AManceau%3BRichard%3B%3B%3B%0AORG%3ASoci%C3%A9t%C3%A9%20LUDOVIC%20ROBERT%0ATITLE%3ADirecteur%20d%E2%80%99agence%0ATEL%3BTYPE%3Dcell%3A0688088906%0AEMAIL%3Armanceau%40robert-platrerie.fr%0AURL%3Ahttps%3A%2F%2Fwww.robert-platrerie-lemans.fr%0AEND%3AVCARD"
+          download="Richard_Manceau.vcf"
+        >
+          <span class="icon">➕</span>
+          <span>Ajouter</span>
+        </a>
+      </div>
+
+      <!-- Map -->
+      <div>
+        <div class="section-title">Localisation</div>
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps?q=Robert%20Platrerie%20Le%20Mans&output=embed"
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="footer-text">
+        Carte de visite dématérialisée – Société LUDOVIC ROBERT
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
